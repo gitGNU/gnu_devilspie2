@@ -150,34 +150,8 @@ int c_set_window_geometry(lua_State *lua)
 
 	if (!devilspie2_emulate) {
 		WnckWindow *window = get_current_window();
-
-		if (window) {
-			WnckScreen *screen = wnck_window_get_screen(window);
-			int sw = wnck_screen_get_width(screen);
-			int sh = wnck_screen_get_height(screen);
-
-			int gravity = WNCK_WINDOW_GRAVITY_CURRENT;
-			if (x >= 0 && y >= 0)
-				gravity = WNCK_WINDOW_GRAVITY_NORTHWEST;
-			if (x >= 0 && y < 0)
-				gravity = WNCK_WINDOW_GRAVITY_SOUTHWEST;
-			if (x < 0 && y >= 0)
-				gravity = WNCK_WINDOW_GRAVITY_NORTHEAST;
-			if (x < 0 && y < 0)
-				gravity = WNCK_WINDOW_GRAVITY_SOUTHEAST;
-			if (x < 0)
-				x = sw + x;
-			if (y < 0)
-				y = sh + y;
-
-			wnck_window_set_geometry(window,
-			                         gravity,
-			                         WNCK_WINDOW_CHANGE_X +
-			                         WNCK_WINDOW_CHANGE_Y +
-			                         WNCK_WINDOW_CHANGE_WIDTH +
-			                         WNCK_WINDOW_CHANGE_HEIGHT,
-			                         x, y, xsize, ysize);
-		}
+		
+		set_window_geometry(window, x, y, xsize, ysize);
 	}
 
 	return 0;
@@ -1020,7 +994,7 @@ int c_get_window_geometry(lua_State *lua)
 	WnckWindow *window = get_current_window();
 	if (window)
 	{
-		wnck_window_get_geometry(window,&x,&y,&width,&height);
+		wnck_window_get_geometry(window, &x, &y, &width, &height);
 	}
 
 	lua_pushnumber(lua, x);
@@ -1852,6 +1826,129 @@ int c_get_window_fullscreen(lua_State *lua)
 	lua_pushboolean(lua, result);
 
 	return 1;
+}
+
+
+/**
+ *
+ */
+int c_xy(lua_State *lua)
+{
+	int top = lua_gettop(lua);
+
+	if (top == 0) {
+		// return the xy coordinates of the window
+		
+		WnckWindow *window = get_current_window();
+		if (window != NULL) {
+							
+			int x, y, width, height;
+
+			wnck_window_get_geometry(window, &x, &y, &width, &height);
+
+			lua_pushnumber(lua, x);
+			lua_pushnumber(lua, y);
+			
+			return 2;
+		}
+
+	} else if (top == 2) {
+		// set the coordinates of the window
+		
+		
+		int type1 = lua_type(lua, 1);
+		int type2 = lua_type(lua, 2);
+
+		if ((type1!=LUA_TNUMBER) ||
+			 (type2!=LUA_TNUMBER)) {
+			luaL_error(lua, "xy: %s", two_indata_expected_error);
+			return 0;
+		}
+
+		int x = lua_tonumber(lua, 1);
+		int y = lua_tonumber(lua, 2);
+		
+		if (!devilspie2_emulate) {
+
+			WnckWindow *window = get_current_window();
+
+			if (window) {
+				wnck_window_set_geometry(window,
+					WNCK_WINDOW_GRAVITY_CURRENT,
+					WNCK_WINDOW_CHANGE_X + WNCK_WINDOW_CHANGE_Y,
+					x, y, -1, -1);
+			}
+		}
+	
+	} else {
+		luaL_error(lua, "xy: %s", two_indata_expected_error);
+		return 0;
+	}
+	return 0;
+}
+
+
+/**
+ *
+ */
+int c_xywh(lua_State *lua)
+{
+	int top = lua_gettop(lua);
+
+	if (top == 0) {
+		// Return the xywh settings of the window
+		
+		WnckWindow *window = get_current_window();
+		if (window != NULL) {
+					
+			int x, y, width, height;
+
+			wnck_window_get_geometry(window, &x, &y, &width, &height);
+
+			lua_pushnumber(lua, x);
+			lua_pushnumber(lua, y);
+			lua_pushnumber(lua, width);
+			lua_pushnumber(lua, height);
+			
+			return 4;
+		}
+
+	} else if (top == 4) {
+		// Set the xywh settings in the window
+
+
+		int type1 = lua_type(lua, 1);
+		int type2 = lua_type(lua, 2);
+		int type3 = lua_type(lua, 3);
+		int type4 = lua_type(lua, 4);
+
+		if ((type1!=LUA_TNUMBER) ||
+			 (type2!=LUA_TNUMBER) ||
+			 (type3!=LUA_TNUMBER) ||
+			 (type4!=LUA_TNUMBER)) {
+			luaL_error(lua, "xywh: %s", four_indata_expected_error);
+			return 0;
+		}
+
+		int x = lua_tonumber(lua, 1);
+		int y = lua_tonumber(lua, 2);
+		int xsize = lua_tonumber(lua, 3);
+		int ysize = lua_tonumber(lua, 4);
+
+		if (!devilspie2_emulate) {
+			WnckWindow *window = get_current_window();
+			
+			set_window_geometry(window, x, y, xsize, ysize);
+		}
+		
+		return 0;
+
+	} else {
+		luaL_error(lua, "xywh: %s", four_indata_expected_error);
+		return 0;
+	}
+
+	return 0;
 }
 
 /*

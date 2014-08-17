@@ -24,6 +24,9 @@
 #include <X11/Xlib.h>
 #include <string.h>
 
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#include <libwnck/libwnck.h>
+
 #include <locale.h>
 
 #include <libintl.h>
@@ -441,5 +444,42 @@ void my_window_set_opacity(Window xid, double value)
 	XChangeProperty(gdk_x11_get_default_xdisplay(), xid,
 						atom_net_wm_opacity, XA_CARDINAL, 32,
 						PropModeReplace, (unsigned char *) &opacity, 1L);
+
+}
+
+
+/**
+ *
+ */
+void set_window_geometry(WnckWindow *window, int x, int y, int w, int h)
+{
+
+	if (window) {
+		WnckScreen *screen = wnck_window_get_screen(window);
+		int sw = wnck_screen_get_width(screen);
+		int sh = wnck_screen_get_height(screen);
+
+		int gravity = WNCK_WINDOW_GRAVITY_CURRENT;
+		if (x >= 0 && y >= 0)
+			gravity = WNCK_WINDOW_GRAVITY_NORTHWEST;
+		if (x >= 0 && y < 0)
+			gravity = WNCK_WINDOW_GRAVITY_SOUTHWEST;
+		if (x < 0 && y >= 0)
+			gravity = WNCK_WINDOW_GRAVITY_NORTHEAST;
+		if (x < 0 && y < 0)
+			gravity = WNCK_WINDOW_GRAVITY_SOUTHEAST;
+		if (x < 0)
+			x = sw + x;
+		if (y < 0)
+			y = sh + y;
+
+		wnck_window_set_geometry(window,
+										 gravity,
+										 WNCK_WINDOW_CHANGE_X +
+										 WNCK_WINDOW_CHANGE_Y +
+										 WNCK_WINDOW_CHANGE_WIDTH +
+										 WNCK_WINDOW_CHANGE_HEIGHT,
+										 x, y, w, h);
+	}
 
 }

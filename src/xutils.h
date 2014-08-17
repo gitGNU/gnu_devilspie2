@@ -51,4 +51,6 @@ int devilspie2_get_viewport_start(Window xwindow);
 void my_window_set_window_type(Window xid, gchar *window_type);
 void my_window_set_opacity(Window xid, double value);
 
+void set_window_geometry(WnckWindow *window, int x, int y, int w, int h);
+
 #endif /*__HEADER_XUTILS_*/
