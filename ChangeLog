@@ -4,6 +4,7 @@ ChangeLog:
 
 0.37
 	* Replace google group with savannah mailinglist 
+	* Add xy and xywh functions
 
 0.36
 	* _Really_ fix the man page commenting style
