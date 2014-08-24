@@ -450,6 +450,16 @@ set_window_strut(left, right, top, bottom)
 	as a taskbar or a panel (available from version 0.32)
 
 
+xy(x,y), xy()
+    Set the position of a window, or if you don't give any input, get the
+    position of a window
+
+
+xywh(x,y,w,h), xywh()
+    Set the position and size of a window, or if you don't give any input, get
+    the position and size of a window.
+
+
 Please note that strings comparisons are case sensitive, comparing
 "SomeProgram" with "someprogram" will not report equality.
 
