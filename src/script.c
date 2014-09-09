@@ -50,12 +50,12 @@
 /**
  *
  */
-gboolean script_loaded=FALSE;
+gboolean script_loaded = FALSE;
 
-gboolean devilspie2_debug=FALSE;
-gboolean devilspie2_emulate=FALSE;
+gboolean devilspie2_debug = FALSE;
+gboolean devilspie2_emulate = FALSE;
 
-lua_State *global_lua_state=NULL;
+lua_State *global_lua_state = NULL;
 
 /**
  *
@@ -63,7 +63,7 @@ lua_State *global_lua_state=NULL;
 lua_State *
 init_script()
 {
-	lua_State *lua=luaL_newstate();
+	lua_State *lua = luaL_newstate();
 	luaL_openlibs(lua);
 
 	register_cfunctions(lua);
@@ -186,16 +186,16 @@ int
 load_script(lua_State *lua,char *filename)
 {
 	if (lua) {
-		int result=luaL_loadfile(lua,filename);
+		int result = luaL_loadfile(lua, filename);
 
 		if (!result) {
-			script_loaded=TRUE;
+			script_loaded = TRUE;
 		} else {
 
 			// We got an error, print it
-			printf("%s\n",lua_tostring(lua,-1));
+			printf("%s\n",lua_tostring(lua, -1));
 
-			lua_pop(lua,1);
+			lua_pop(lua, 1);
 
 			return -1;
 		}
@@ -219,7 +219,7 @@ run_script(lua_State *lua)
 
 		char *error_msg;
 
-		error_msg=(char*)lua_tostring( lua, -1 );
+		error_msg = (char*)lua_tostring( lua, -1 );
 
 		//std::string luaErrorString=getLuaErrorString(s);
 
@@ -232,7 +232,7 @@ run_script(lua_State *lua)
 		throw( ScriptException( mssOut.str().c_str(), errorMsg ) );
 		*/
 
-		printf(_("Error: %s"),error_msg);
+		printf(_("Error: %s"), error_msg);
 		printf("\n");
 	}
 }
