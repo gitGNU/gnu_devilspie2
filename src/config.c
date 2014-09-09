@@ -173,10 +173,6 @@ int load_config(gchar *filename)
 	const gchar *current_file = NULL;
 	GSList *temp_window_open_file_list = NULL;
 
-	// set the current window to NULL, we don't need to be able to modify
-	// the windows when reading the config
-	set_current_window(NULL);
-
 	// First get list of Lua files in folder - Then read variables from
 	// devilspie2.lua and put the files in the required lists.
 

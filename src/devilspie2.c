@@ -248,6 +248,7 @@ void folder_changed_callback(GFileMonitor *mon,
 
 		clear_file_lists();
 
+		set_current_window(NULL);
 		load_config(our_filename);
 
 		if (debug)
@@ -269,6 +270,7 @@ void folder_changed_callback(GFileMonitor *mon,
 
 				clear_file_lists();
 
+				set_current_window(NULL);
 				load_config(our_filename);
 
 				print_script_lists();
@@ -384,6 +386,10 @@ int main(int argc, char *argv[])
 		printf("\n");
 		exit(EXIT_FAILURE);
 	}
+
+	// set the current window to NULL, we don't need to be able to modify
+	// the windows when reading the config
+	set_current_window(NULL);
 
 	config_filename =
 		g_build_filename(script_folder, "devilspie2.lua", NULL);
