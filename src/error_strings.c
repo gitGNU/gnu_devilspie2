@@ -24,22 +24,22 @@
 #include "error_strings.h"
 
 
-gchar *no_indata_expected_error=NULL;
-gchar *one_indata_expected_error=NULL;
-gchar *two_indata_expected_error=NULL;
-gchar *four_indata_expected_error=NULL;
+gchar *no_indata_expected_error = NULL;
+gchar *one_indata_expected_error = NULL;
+gchar *two_indata_expected_error = NULL;
+gchar *four_indata_expected_error = NULL;
 
-gchar *number_expected_as_indata_error=NULL;
-gchar *boolean_expected_as_indata_error=NULL;
+gchar *number_expected_as_indata_error = NULL;
+gchar *boolean_expected_as_indata_error = NULL;
 
-gchar *string_expected_as_indata_error=NULL;
+gchar *string_expected_as_indata_error = NULL;
 
-gchar *integer_greater_than_zero_expected_error=NULL;
-gchar *could_not_find_current_viewport_error=NULL;
+gchar *integer_greater_than_zero_expected_error = NULL;
+gchar *could_not_find_current_viewport_error = NULL;
 
-gchar *setting_viewport_failed_error=NULL;
+gchar *setting_viewport_failed_error = NULL;
 
-gchar *failed_string=NULL;
+gchar *failed_string = NULL;
 
 /**
  *
