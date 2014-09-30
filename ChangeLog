@@ -2,6 +2,11 @@
 ChangeLog:
 ----------
 
+0.38
+	* Add documentation of xy and xywh functions
+	* Source cleanups
+	* Move setting of current window variable
+
 0.37
 	* Replace google group with savannah mailinglist 
 	* Add xy and xywh functions
