@@ -17,7 +17,9 @@
 # If not, see <http://www.gnu.org/licenses/>.
 #
 
-CC=gcc
+ifndef CC
+	CC=gcc
+endif
 SRC=src
 OBJ=obj
 BIN=bin
@@ -107,6 +109,6 @@ uninstall:
 	${MAKE} -C po uninstall
 
 $(DEPEND):
-	$(CC) -MM $(SRC)/*.c | sed -e "s/\([A-Za-z0-9+-0._&+-]*:\)/\$(OBJ)\/\1/g" > $(DEPEND)
+	$(CC) -MM $(LOCAL_CFLAGS) $(SRC)/*.c | sed -e "s/\([A-Za-z0-9+-0._&+-]*:\)/\$(OBJ)\/\1/g" > $(DEPEND)
 
 -include $(DEPEND)
