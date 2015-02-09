@@ -478,7 +478,10 @@ int c_debug_print(lua_State *lua)
 		if (devilspie2_debug) fputs(s, stdout);
 		lua_pop(lua, 1);  /* pop result */
 	}
-	if (devilspie2_debug) fputs("\n", stdout);
+	if (devilspie2_debug) {
+		fputs("\n", stdout);
+		fflush(stdout);
+	}
 
 	return 0;
 }
