@@ -26,10 +26,10 @@
 Atom my_wnck_atom_get(const char *atom_name);
 
 void devilspie2_change_state(Screen *screen,
-									Window xwindow,
-									gboolean add,
-									Atom state1,
-									Atom state2);
+                             Window xwindow,
+                             gboolean add,
+                             Atom state1,
+                             Atom state2);
 
 Screen* devilspie2_window_get_xscreen(Window xid);
 
@@ -42,9 +42,9 @@ gboolean undecorate_window(Window xid);
 char* my_wnck_get_string_property_latin1 (Window xwindow, Atom atom);
 
 gboolean my_wnck_get_cardinal_list(Window xwindow,
-												Atom atom,
-												gulong **cardinals,
-												int *len);
+                                   Atom atom,
+                                   gulong **cardinals,
+                                   int *len);
 
 int devilspie2_get_viewport_start(Window xwindow);
 
