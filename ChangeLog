@@ -4,7 +4,6 @@ ChangeLog:
 
 X.XX
 	* Fix proper flushing of debugging output
-	* Source formatting changes
 
 0.38
 	* Add documentation of xy and xywh functions
