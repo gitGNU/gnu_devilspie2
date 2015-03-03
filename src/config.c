@@ -79,7 +79,7 @@ GSList *get_table_of_strings(lua_State *luastate,
                              gchar *script_folder,
                              gchar *table_name)
 {
-	GSList *list=NULL;
+	GSList *list = NULL;
 
 	if (luastate) {
 
@@ -125,7 +125,7 @@ EXITPOINT:
  */
 gboolean is_in_list(GSList *list, gchar *filename)
 {
-	gboolean result=FALSE;
+	gboolean result = FALSE;
 
 	if (list) {
 		GSList *temp_list = list;
@@ -134,8 +134,8 @@ gboolean is_in_list(GSList *list, gchar *filename)
 			gchar *list_filename = (gchar*)temp_list->data;
 			if (list_filename) {
 
-				if (g_ascii_strcasecmp(list_filename, filename)==0) {
-					result=TRUE;
+				if (g_ascii_strcasecmp(list_filename, filename) == 0) {
+					result = TRUE;
 				}
 			}
 			temp_list = temp_list->next;
@@ -192,7 +192,7 @@ int load_config(gchar *filename)
 
 	if (g_file_test(filename, G_FILE_TEST_EXISTS)) {
 
-		if (load_script(config_lua_state, filename)!=0) {
+		if (load_script(config_lua_state, filename) != 0) {
 			printf(_("Error: %s"), filename);
 			printf("\n");
 			result = -1;

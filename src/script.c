@@ -193,7 +193,7 @@ load_script(lua_State *lua,char *filename)
 		} else {
 
 			// We got an error, print it
-			printf("%s\n",lua_tostring(lua, -1));
+			printf("%s\n", lua_tostring(lua, -1));
 
 			lua_pop(lua, 1);
 

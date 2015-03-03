@@ -82,7 +82,7 @@ static void load_list_of_scripts(WnckScreen *screen, WnckWindow *window,
 			gchar *filename = (gchar*)temp_file_list->data;
 
 			// is it a LUA file?
-			if (g_str_has_suffix((gchar*)filename,".lua")) {
+			if (g_str_has_suffix((gchar*)filename, ".lua")) {
 
 				// init the script, run it
 				if (!load_script(global_lua_state, filename)) {
@@ -399,7 +399,7 @@ int main(int argc, char *argv[])
 	config_filename =
 	    g_build_filename(script_folder, "devilspie2.lua", NULL);
 
-	if (load_config(config_filename)!=0) {
+	if (load_config(config_filename) != 0) {
 
 		devilspie_exit();
 		return EXIT_FAILURE;

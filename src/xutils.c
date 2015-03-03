@@ -183,7 +183,7 @@ gboolean decorate_window(Window xid)
 	set_decorations(xid, TRUE);
 
 	if (devilspie2_error_trap_pop()) {
-		g_printerr("decorate_window %s\n",_("Failed!"));
+		g_printerr("decorate_window %s\n", _("Failed!"));
 		return FALSE;
 	}
 
@@ -283,13 +283,13 @@ char* my_wnck_get_string_property_latin1(Window xwindow, Atom atom)
 	} else if (type == XA_CARDINAL && nitems == 1) {
 		switch(format) {
 		case 32:
-			retval = g_strdup_printf("%lu",*(unsigned long*)property);
+			retval = g_strdup_printf("%lu", *(unsigned long*)property);
 			break;
 		case 16:
-			retval = g_strdup_printf("%u",*(unsigned int*)property);
+			retval = g_strdup_printf("%u", *(unsigned int*)property);
 			break;
 		case 8:
-			retval = g_strdup_printf("%c",*(unsigned char*)property);
+			retval = g_strdup_printf("%c", *(unsigned char*)property);
 			break;
 		}
 	}
@@ -327,10 +327,10 @@ my_wnck_get_cardinal_list (Window xwindow, Atom atom,
 
 	err = devilspie2_error_trap_pop();
 
-	if ((err!=Success) || (result!=Success))
+	if ((err != Success) || (result != Success))
 		return FALSE;
 
-	if (type!=XA_CARDINAL) {
+	if (type != XA_CARDINAL) {
 		XFree (nums);
 		return FALSE;
 	}
@@ -360,7 +360,7 @@ int devilspie2_get_viewport_start(Window xid)
 	                          my_wnck_atom_get("_NET_DESKTOP_VIEWPORT"),
 	                          &list, &len);
 
-	if (len>0) result = list[0];
+	if (len > 0) result = list[0];
 
 	g_free(list);
 
@@ -392,28 +392,28 @@ void my_window_set_window_type(Window xid, gchar *window_type)
 
 	//	Make it a recognized _NET_WM_TYPE
 
-	if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_DESKTOP")==0) {
+	if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_DESKTOP") == 0) {
 		type = g_strdup("_NET_WM_WINDOW_TYPE_DESKTOP");
 
-	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_DOCK")==0) {
+	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_DOCK") == 0) {
 		type = g_strdup("_NET_WM_WINDOW_TYPE_DOCK");
 
-	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_TOOLBAR")==0) {
+	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_TOOLBAR") == 0) {
 		type = g_strdup("_NET_WM_WINDOW_TYPE_TOOLBAR");
 
-	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_MENU")==0) {
+	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_MENU") == 0) {
 		type = g_strdup("_NET_WM_WINDOW_TYPE_MENU");
 
-	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_UTILITY")==0) {
+	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_UTILITY") == 0) {
 		type = g_strdup("_NET_WM_WINDOW_TYPE_UTILITY");
 
-	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_SPLASH")==0) {
+	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_SPLASH") == 0) {
 		type = g_strdup("_NET_WM_WINDOW_TYPE_SPLASH");
 
-	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_DIALOG")==0) {
+	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_DIALOG") == 0) {
 		type = g_strdup("_NET_WM_WINDOW_TYPE_DIALOG");
 
-	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_NORMAL")==0) {
+	} else if (g_ascii_strcasecmp(window_type, "WINDOW_TYPE_NORMAL") == 0) {
 		type = g_strdup("_NET_WM_WINDOW_TYPE_NORMAL");
 
 	} else {
