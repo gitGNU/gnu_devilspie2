@@ -28,7 +28,7 @@ Add it in script.c in the function "register_cfunctions", using a
 lua_register call - To add a function having the lua name "center", and connect
 it with the C function c_center, do this:
 
-lua_register(lua,"center",c_center);
+lua_register(lua,"center", c_center);
 
 This registers a center function, that will call the c_center function in the
 C code. The C function should be placed in script_functions.c & its header,
