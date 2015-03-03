@@ -224,12 +224,12 @@ get_fullscreen
 and the rest of the commands are used to modify the properties of the windows:
 
 
-set_window_position(xpos,ypos)
+set_window_position(xpos, ypos)
 
    Set the position of a window.
 
 
-set_window_position2(xpos,ypos)
+set_window_position2(xpos, ypos)
 
    Set the position of a window - Compared to set_window_position, this
    function uses XMoveWindow instead of wnck_window_set_geometry which
@@ -450,12 +450,12 @@ set_window_strut(left, right, top, bottom)
 	as a taskbar or a panel (available from version 0.32)
 
 
-xy(x,y), xy()
+xy(x, y), xy()
     Set the position of a window, or if you don't give any input, get the
     position of a window
 
 
-xywh(x,y,w,h), xywh()
+xywh(x, y, w, h), xywh()
     Set the position and size of a window, or if you don't give any input, get
     the position and size of a window.
 
@@ -478,13 +478,13 @@ debug_print("Application name: " .. get_application_name())
 -- I want my Xfce4-terminal to the right on the second screen of my two-monitor
 -- setup. (String comparison are case sensitive, please note this when
 -- creating rule scripts.)
-if (get_window_name()=="Terminal") then
+if (get_window_name() == "Terminal") then
    -- x,y, xsize, ysize
-   set_window_geometry(1600,300,900,700);
+   set_window_geometry(1600, 300, 900, 700);
 end
 
 -- Make Iceweasel always start maximized.
-if (get_application_name()=="Iceweasel") then
+if (get_application_name() == "Iceweasel") then
    maximize();
 end
 
@@ -510,7 +510,7 @@ Contact
 Author: Andreas Rönnquist
 E-mail: devilspie2 (at) gusnan (dot) se
 Homepage: http://www.gusnan.se/devilspie2
-Mailinglist: devilspie2-discuss@nongnu.org, 
+Mailinglist: devilspie2-discuss@nongnu.org,
              https://lists.nongnu.org/mailman/listinfo/devilspie2-discuss
 
 IRC: #devilspie2 on irc.freenode.net
