@@ -138,6 +138,8 @@ register_cfunctions(lua_State *lua)
 	             c_get_window_is_maximized_horisontally);
 	lua_register(lua, "get_window_is_maximized_horizontally",
 	             c_get_window_is_maximized_horisontally);
+	lua_register(lua, "get_window_is_pinned",
+	             c_get_window_is_pinned);
 
 	lua_register(lua, "set_window_below", c_set_window_below);
 	lua_register(lua, "set_window_above", c_set_window_above);

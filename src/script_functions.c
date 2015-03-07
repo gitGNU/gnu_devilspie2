@@ -1187,6 +1187,32 @@ int c_get_window_is_maximized_horisontally(lua_State *lua)
 /**
  *
  */
+int c_get_window_is_pinned(lua_State *lua)
+{
+	int top = lua_gettop(lua);
+
+	if (top != 0) {
+		luaL_error(lua, "get_window_is_pinned: %s",
+		           no_indata_expected_error);
+		return 0;
+	}
+
+	WnckWindow *window = get_current_window();
+
+	gboolean is_pinned = FALSE;
+	if (window) {
+		is_pinned = wnck_window_is_pinned(window);
+	}
+
+	lua_pushboolean(lua, is_pinned);
+
+	return 1;
+}
+
+
+/**
+ *
+ */
 int c_set_window_above(lua_State *lua)
 {
 	int top = lua_gettop(lua);
