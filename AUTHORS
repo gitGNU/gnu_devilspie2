@@ -48,3 +48,6 @@ Hiroshi Hasebe <hhasebe (at) dvoi (dot) com>
 
 rbtwrrr <rbtwrrr (at) inventati (dot) org>
 - add boolean argument to set_window_{above, below}
+
+Toni Spets <toni.spets@iki.fi>
+- add get_window_is_pinned function
