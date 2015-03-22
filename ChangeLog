@@ -5,6 +5,7 @@ ChangeLog:
 X.XX
 	* Fix proper flushing of debugging output
 	* Some source formatting fixes
+	* add get_window_is_pinned function
 
 0.38
 	* Add documentation of xy and xywh functions
