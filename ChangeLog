@@ -2,7 +2,7 @@
 ChangeLog:
 ----------
 
-X.XX
+0.39
 	* Fix proper flushing of debugging output
 	* Some source formatting fixes
 	* add get_window_is_pinned function
