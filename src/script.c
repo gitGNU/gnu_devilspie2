@@ -178,6 +178,7 @@ register_cfunctions(lua_State *lua)
 	lua_register(lua, "xy", c_xy);
 	lua_register(lua, "xywh", c_xywh);
 
+	lua_register(lua, "on_geometry_changed", c_on_geometry_changed);
 }
 
 

@@ -118,4 +118,6 @@ int c_get_window_fullscreen(lua_State *lua);
 int c_xy(lua_State *lua);
 int c_xywh(lua_State *lua);
 
+int c_on_geometry_changed(lua_State *lua);
+
 #endif /*__HEADER_SCRIPT_FUNCTIONS_*/

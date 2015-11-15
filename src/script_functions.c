@@ -1979,6 +1979,59 @@ int c_xywh(lua_State *lua)
 	return 0;
 }
 
+struct lua_callback {
+	lua_State *lua;
+	int ref;
+};
+
+static void on_geometry_changed(WnckWindow *window, struct lua_callback *callback)
+{
+	if (callback == NULL)
+		return;
+
+	WnckWindow *old_window = get_current_window();
+	set_current_window(window);
+
+	lua_rawgeti(callback->lua, LUA_REGISTRYINDEX, callback->ref);
+	lua_pcall(callback->lua, 0, 0, 0);
+
+	set_current_window(old_window);
+}
+
+static void on_geometry_changed_disconnect(gpointer data, GClosure *closure)
+{
+	g_free(data);
+}
+
+/**
+ *
+ */
+int c_on_geometry_changed(lua_State *lua)
+{
+	int top = lua_gettop(lua);
+	if (top != 1) {
+		luaL_error(lua, "on_geometry_changed: %s", one_indata_expected_error);
+		return 0;
+	}
+
+	if (lua_type(lua, 1) != LUA_TFUNCTION) {
+		luaL_error(lua, "on_geometry_changed: %s", "function expected");
+		return 0;
+	}
+
+	struct lua_callback *cb = g_malloc(sizeof(struct lua_callback));
+	cb->lua = lua;
+	cb->ref = luaL_ref(lua, LUA_REGISTRYINDEX);
+
+	WnckWindow *window = get_current_window();
+
+	if (window) {
+		g_signal_connect_data(window, "geometry-changed", G_CALLBACK(on_geometry_changed), (gpointer)cb, (GClosureNotify)(on_geometry_changed_disconnect), 0);
+	}
+
+	return 0;
+}
+
 /*
  * Devilspie:
 
