@@ -1579,62 +1579,121 @@ int c_set_viewport(lua_State *lua)
 {
 	int top = lua_gettop(lua);
 	WnckScreen *screen;
-	int x,y,width,height, viewport_start;
+	int x, width, height;
+	int viewport_start_x, viewport_start_y;
+	int win_x, win_y;
+	
+	if (top == 1) {
 
-	if (top != 1) {
-		luaL_error(lua, "set_viewport: %s", one_indata_expected_error);
+		int type = lua_type(lua, 1);
+		if (type != LUA_TNUMBER) {
+			luaL_error(lua, "set_viewport: %s", number_expected_as_indata_error);
+			return 0;
+		}
+
+		int num = lua_tonumber(lua,1);
+
+		if (num <= 0) {
+			g_error("set_viewport: %s", integer_greater_than_zero_expected_error);
+			lua_pushboolean(lua, FALSE);
+			return 1;
+		}
+
+		WnckWindow *window = get_current_window();
+
+		if (!window) {
+			lua_pushboolean(lua, FALSE);
+			return 1;
+		}
+
+		screen = wnck_window_get_screen(window);
+
+		wnck_window_get_geometry(window, &win_x, &win_y, &width, &height);
+
+		gulong xid = wnck_window_get_xid(window);
+
+		//viewport_start = devilspie2_get_viewport_start(xid);
+		if (devilspie2_get_viewport_start(xid, &viewport_start_x, &viewport_start_y) != 0) {
+			g_printerr("set_viewport: %s", could_not_find_current_viewport_error);
+			lua_pushboolean(lua, FALSE);
+			return 1;
+		}
+
+		x = ((num - 1) * wnck_screen_get_width(screen)) - viewport_start_x + win_x;
+		
+		devilspie2_error_trap_push();
+		XMoveResizeWindow(gdk_x11_get_default_xdisplay(),
+								wnck_window_get_xid(window),
+								x, win_y, width, height);
+
+		if (devilspie2_error_trap_pop()) {
+			g_printerr("set_viewport: %s", setting_viewport_failed_error);
+			lua_pushboolean(lua, FALSE);
+			return 1;
+		}
+
+		lua_pushboolean(lua, TRUE);
+		return 1;
+
+	} else if (top == 2) {
+		
+		int type1 = lua_type(lua, 1);
+		int type2 = lua_type(lua, 2);
+		
+		if (type1 != LUA_TNUMBER) {
+			luaL_error(lua, "set_viewport: %s", number_expected_as_indata_error);
+			return 0;
+		}
+		
+		if (type2 != LUA_TNUMBER) {
+			luaL_error(lua, "set_viewport: %s", number_expected_as_indata_error);
+			return 0;
+		}
+		
+		int new_xpos = lua_tonumber(lua, 1);
+		int new_ypos = lua_tonumber(lua, 2);
+		
+		WnckWindow *window = get_current_window();
+		
+		if (!window) {
+			lua_pushboolean(lua, FALSE);
+			return 1;
+		}
+		
+		screen = wnck_window_get_screen(window);
+		
+		wnck_window_get_geometry(window, &win_x, &win_y, &width, &height);
+
+		gulong xid = wnck_window_get_xid(window);
+
+		//viewport_start = devilspie2_get_viewport_start(xid);
+		if (devilspie2_get_viewport_start(xid, &viewport_start_x, &viewport_start_y) != 0) {
+			g_printerr("set_viewport: %s", could_not_find_current_viewport_error);
+			lua_pushboolean(lua, FALSE);
+			return 1;
+		}
+		
+		devilspie2_error_trap_push();
+		XMoveResizeWindow(gdk_x11_get_default_xdisplay(),
+								wnck_window_get_xid(window),
+								new_xpos, new_ypos, width, height);
+
+		if (devilspie2_error_trap_pop()) {
+			g_printerr("set_viewport: %s", setting_viewport_failed_error);
+			lua_pushboolean(lua, FALSE);
+			return 1;
+		}
+
+		lua_pushboolean(lua, TRUE);
+		return 1;
+		
+	
+	} else {
+		luaL_error(lua, "set_viewport: %s", one_or_two_indata_expected_error);
 		return 0;
 	}
-
-	int type = lua_type(lua, 1);
-	if (type != LUA_TNUMBER) {
-		luaL_error(lua, "set_viewport: %s", number_expected_as_indata_error);
-		return 0;
-	}
-
-	int num = lua_tonumber(lua,1);
-
-	if (num <= 0) {
-		g_error("set_viewport: %s", integer_greater_than_zero_expected_error);
-		lua_pushboolean(lua, FALSE);
-		return 1;
-	}
-
-	WnckWindow *window = get_current_window();
-
-	if (!window) {
-		lua_pushboolean(lua, FALSE);
-		return 1;
-	}
-
-	screen = wnck_window_get_screen(window);
-
-	wnck_window_get_geometry(window, &x, &y, &width, &height);
-
-	gulong xid = wnck_window_get_xid(window);
-
-	viewport_start = devilspie2_get_viewport_start(xid);
-	if (viewport_start < 0) {
-		g_printerr("set_viewport: %s", could_not_find_current_viewport_error);
-		lua_pushboolean(lua, FALSE);
-		return 1;
-	}
-
-	x=((num-1) * wnck_screen_get_width(screen)) - viewport_start + x;
-
-	devilspie2_error_trap_push();
-	XMoveResizeWindow(gdk_x11_get_default_xdisplay(),
-	                  wnck_window_get_xid(window),
-	                  x, y, width, height);
-
-	if (devilspie2_error_trap_pop()) {
-		g_printerr("set_viewport: %s", setting_viewport_failed_error);
-		lua_pushboolean(lua, FALSE);
-		return 1;
-	}
-
-	lua_pushboolean(lua, TRUE);
-	return 1;
+	
+	return 0;
 }
 
 
