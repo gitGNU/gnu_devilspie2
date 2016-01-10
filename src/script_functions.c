@@ -1640,22 +1640,22 @@ int c_set_viewport(lua_State *lua)
 		
 		int type1 = lua_type(lua, 1);
 		int type2 = lua_type(lua, 2);
-		
+
 		if (type1 != LUA_TNUMBER) {
 			luaL_error(lua, "set_viewport: %s", number_expected_as_indata_error);
 			return 0;
 		}
-		
+
 		if (type2 != LUA_TNUMBER) {
 			luaL_error(lua, "set_viewport: %s", number_expected_as_indata_error);
 			return 0;
 		}
-		
+
 		int new_xpos = lua_tonumber(lua, 1);
 		int new_ypos = lua_tonumber(lua, 2);
-		
+
 		WnckWindow *window = get_current_window();
-		
+
 		if (!window) {
 			lua_pushboolean(lua, FALSE);
 			return 1;
