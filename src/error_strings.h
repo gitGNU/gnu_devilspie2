@@ -27,6 +27,8 @@ extern gchar *one_indata_expected_error;
 extern gchar *two_indata_expected_error;
 extern gchar *four_indata_expected_error;
 
+extern gchar *one_or_two_indata_expected_error;
+
 extern gchar *number_expected_as_indata_error;
 extern gchar *boolean_expected_as_indata_error;
 

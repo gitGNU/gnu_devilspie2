@@ -29,6 +29,8 @@ gchar *one_indata_expected_error = NULL;
 gchar *two_indata_expected_error = NULL;
 gchar *four_indata_expected_error = NULL;
 
+gchar *one_or_two_indata_expected_error = NULL;
+
 gchar *number_expected_as_indata_error = NULL;
 gchar *boolean_expected_as_indata_error = NULL;
 
@@ -71,6 +73,13 @@ int init_script_error_messages()
 
 	four_indata_expected_error = g_strdup_printf(_("Four indata expected"));
 	if (!four_indata_expected_error) {
+		printf("%s", ALLOCATE_ERROR_STRING);
+		printf("\n");
+		return -1;
+	}
+
+	one_or_two_indata_expected_error = g_strdup_printf(_("One or two indata expected"));
+	if (!one_or_two_indata_expected_error) {
 		printf("%s", ALLOCATE_ERROR_STRING);
 		printf("\n");
 		return -1;
@@ -144,6 +153,8 @@ void done_script_error_messages()
 	g_free(one_indata_expected_error);
 	g_free(two_indata_expected_error);
 	g_free(four_indata_expected_error);
+
+	g_free(one_or_two_indata_expected_error);
 
 	g_free(number_expected_as_indata_error);
 	g_free(boolean_expected_as_indata_error);
