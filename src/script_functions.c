@@ -1578,13 +1578,14 @@ int c_set_window_fullscreen(lua_State *lua)
 int c_set_viewport(lua_State *lua)
 {
 	int top = lua_gettop(lua);
-	WnckScreen *screen;
-	int x, width, height;
+	int width, height;
 	int viewport_start_x, viewport_start_y;
 	int win_x, win_y;
 	
 	if (top == 1) {
 
+		WnckScreen *screen;
+		int x;
 		int type = lua_type(lua, 1);
 		if (type != LUA_TNUMBER) {
 			luaL_error(lua, "set_viewport: %s", number_expected_as_indata_error);
@@ -1659,9 +1660,7 @@ int c_set_viewport(lua_State *lua)
 			lua_pushboolean(lua, FALSE);
 			return 1;
 		}
-		
-		screen = wnck_window_get_screen(window);
-		
+
 		wnck_window_get_geometry(window, &win_x, &win_y, &width, &height);
 
 		gulong xid = wnck_window_get_xid(window);
