@@ -346,9 +346,10 @@ my_wnck_get_cardinal_list (Window xwindow, Atom atom,
 
 
 /**
- *
+ *	Get viewport start coordinates to the x and y integers,
+ * returns 0 on success and non-zero on error.
  */
-int devilspie2_get_viewport_start(Window xid)
+int devilspie2_get_viewport_start(Window xid, int *x, int *y)
 {
 	gulong *list;
 	int len;
@@ -360,7 +361,12 @@ int devilspie2_get_viewport_start(Window xid)
 	                          my_wnck_atom_get("_NET_DESKTOP_VIEWPORT"),
 	                          &list, &len);
 
-	if (len > 0) result = list[0];
+	if (len > 0) {
+		*x = list[0];
+		*y = list[1];
+
+		result = 0;
+	}
 
 	g_free(list);
 

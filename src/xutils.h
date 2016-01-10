@@ -46,7 +46,7 @@ gboolean my_wnck_get_cardinal_list(Window xwindow,
                                    gulong **cardinals,
                                    int *len);
 
-int devilspie2_get_viewport_start(Window xwindow);
+int devilspie2_get_viewport_start(Window xwindow, int *x, int *y);
 
 void my_window_set_window_type(Window xid, gchar *window_type);
 void my_window_set_opacity(Window xid, double value);
