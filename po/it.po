@@ -1,0 +1,158 @@
+# Italian translation for devilspie2 package.
+# Copyright (C) 2016 The devilspie2's copyright holder
+# This file is distributed under the same license as the devilspie2 package.
+# Nicola Fontana <ntd@entidi.it>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: devilspie2 0.33pre\n"
+"Report-Msgid-Bugs-To: gusnan@gusnan.se\n"
+"POT-Creation-Date: 2014-04-02 21:21+0200\n"
+"PO-Revision-Date: 2016-01-29 08:31+0100\n"
+"Last-Translator: Nicola Fontana <ntd@entidi.it>\n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: config.c:188
+msgid "script_folder isn't a folder."
+msgstr "script_folder non è una cartella."
+
+#: config.c:200 script.c:232
+#, c-format
+msgid "Error: %s"
+msgstr "Errore: %s"
+
+#: devilspie2.c:164
+msgid "Received signal:"
+msgstr "Segnale ricevuto:"
+
+#: devilspie2.c:208
+msgid "No script files found in the script folder - exiting."
+msgstr "Nessuno script trovato nella cartella script - uscita."
+
+#: devilspie2.c:215 devilspie2.c:223
+#, c-format
+msgid "List of Lua files handling \"%s\" events in folder:"
+msgstr "Elenco dei file Lua nella cartella che gestiscono l'evento \"%s\":"
+
+#: devilspie2.c:289
+msgid "Print debug info to stdout"
+msgstr "Stampa messaggi di debug su stdout"
+
+#: devilspie2.c:291
+msgid "Don't apply any rules, only emulate execution"
+msgstr "Non applicare le regole, simularne solo l'esecuzione"
+
+#: devilspie2.c:293
+msgid "Search for scripts in this folder"
+msgstr "Ricercare script in questa cartella"
+
+#: devilspie2.c:293
+msgid "FOLDER"
+msgstr "CARTELLA"
+
+#: devilspie2.c:295
+msgid "Show Devilspie2 version and quit"
+msgstr "Mostrare la versione di Devilspie2 e uscire"
+
+#: devilspie2.c:300
+msgid "Show libwnck version and quit"
+msgstr "Mostrare la versione di libwnck e uscire"
+
+#: devilspie2.c:318
+msgid "apply rules on windows"
+msgstr "applicare regole alla finestra"
+
+#: devilspie2.c:325
+#, c-format
+msgid "option parsing failed: %s"
+msgstr "analisi opzioni fallita: %s"
+
+#: devilspie2.c:346
+msgid "Couldn't create the default folder for devilspie2 scripts."
+msgstr "Non posso creare la cartella di default per gli script."
+
+#: devilspie2.c:373
+msgid "An X11 display is required for devilspie2."
+msgstr "Devilspie2 richiede un display X11."
+
+#: devilspie2.c:381
+msgid "Couldn't init script error messages!"
+msgstr "Impossibile inizializzare i messaggi di errore!"
+
+#: devilspie2.c:398
+msgid "Running devilspie2 in debug and emulate mode."
+msgstr "Esecuzione di devilspie2 in modalità debug e emulazione."
+
+#: devilspie2.c:400
+msgid "Running devilspie2 in debug mode."
+msgstr "Esecuzione di devilspie2 in modalità debug."
+
+#: devilspie2.c:405
+#, c-format
+msgid "Using scripts from folder: %s"
+msgstr "Utilizzo script dalla cartella: %s"
+
+#: devilspie2.c:421
+msgid "Couldn't create directory monitor!"
+msgstr "Impossibile creare la directory monitor!"
+
+#: script_functions.c:732 script_functions.c:778
+#, c-format
+msgid "Workspace number %d does not exist!"
+msgstr "Il workspace %d non esiste!"
+
+#: script_functions.c:1673
+msgid "Could not get workspace"
+msgstr "Impossibile leggere il workspace"
+
+#: xutils.c:183 xutils.c:201 error_strings.c:127
+msgid "Failed!"
+msgstr "Fallito!"
+
+#: error_strings.c:49
+msgid "Couldn't allocate error string!"
+msgstr "Impossibile allocare la stringa di errore!"
+
+#: error_strings.c:51
+msgid "No indata expected"
+msgstr "Nessun argomento atteso"
+
+#: error_strings.c:58
+msgid "One indata expected"
+msgstr "Un argomento atteso"
+
+#: error_strings.c:65
+msgid "Two indata expected"
+msgstr "Due argomenti attesi"
+
+#: error_strings.c:72
+msgid "Four indata expected"
+msgstr "Quattro argomenti attesi"
+
+#: error_strings.c:80
+msgid "Number expected as indata"
+msgstr "Atteso argomento numerico"
+
+#: error_strings.c:88
+msgid "Boolean expected as indata"
+msgstr "Atteso argomento booleano"
+
+#: error_strings.c:96
+msgid "String expected as indata"
+msgstr "Atteso argomento stringa"
+
+#: error_strings.c:104
+msgid "Integer greater than zero expected"
+msgstr "Atteso intero maggiore o uguale a zero"
+
+#: error_strings.c:112
+msgid "Could not find current viewport"
+msgstr "Impossibile trovare la viewport attuale"
+
+#: error_strings.c:120
+msgid "Setting viewport failed"
+msgstr "Impostazione della viewport fallita"
