@@ -252,8 +252,7 @@ char* my_wnck_get_string_property_latin1(Window xwindow, Atom atom)
 
 	if (type == XA_STRING) {
 		retval = g_strdup ((char*)property);
-	}
-	else if (type == XA_ATOM && nitems > 0 && format == 32) {
+	} else if (type == XA_ATOM && nitems > 0 && format == 32) {
 		long *pp;
 
 		pp = (long *)property; // we can assume (long *) since format == 32
@@ -292,6 +291,10 @@ char* my_wnck_get_string_property_latin1(Window xwindow, Atom atom)
 			retval = g_strdup_printf("%c", *(unsigned char*)property);
 			break;
 		}
+	} else if (type == XA_WINDOW && nitems == 1) {
+		/* unsinged long is the same format used for XID by libwnck:
+		   https://git.gnome.org/browse/libwnck/tree/libwnck/window.c?h=3.14.0#n763 */
+		retval = g_strdup_printf("%lu", (gulong) *(Window *)property);
 	}
 
 	XFree (property);
