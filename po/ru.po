@@ -35,8 +35,8 @@ msgstr "В директории для скриптов нет скриптов 
 
 #: devilspie2.c:215 devilspie2.c:223
 #, c-format
-msgid "List of LUA files handling \"%s\" events in folder:"
-msgstr "Список LUA файлов для \"%s\" событий в директории:"
+msgid "List of Lua files handling \"%s\" events in folder:"
+msgstr "Список Lua файлов для \"%s\" событий в директории:"
 
 #: devilspie2.c:289
 msgid "Print debug info to stdout"

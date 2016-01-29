@@ -38,8 +38,8 @@ msgstr "script_folderにスクリプトが存在せず - 終了."
 
 #: devilspie2.c:215 devilspie2.c:223
 #, c-format
-msgid "List of LUA files handling \"%s\" events in folder:"
-msgstr "イベント \"%s\" を担当するLUAファイルの一覧:"
+msgid "List of Lua files handling \"%s\" events in folder:"
+msgstr "イベント \"%s\" を担当するLuaファイルの一覧:"
 
 #: devilspie2.c:289
 msgid "Print debug info to stdout"

@@ -32,7 +32,7 @@ Hans Nieser <hans (at) nieser (dot) nl>
 - Patch adding get_workspace_count function
 
 larchunix
-- Patch replacing lua_open with luaL_newstate, to make it work with LUA 5.2.
+- Patch replacing lua_open with luaL_newstate, to make it work with Lua 5.2.
 
 Laurent Brachet <yg (dot) oenpurg (at) gmail (dot) com>
 - Patch to make set_window_geometry accept negative values

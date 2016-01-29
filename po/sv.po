@@ -36,8 +36,8 @@ msgstr "Inga skript hittades i skript-mappen - avslutar."
 
 #: devilspie2.c:215 devilspie2.c:223
 #, c-format
-msgid "List of LUA files handling \"%s\" events in folder:"
-msgstr "Lista på LUA-filer som hanterar \"%s\"-händelser i mappen:"
+msgid "List of Lua files handling \"%s\" events in folder:"
+msgstr "Lista på Lua-filer som hanterar \"%s\"-händelser i mappen:"
 
 #: devilspie2.c:289
 msgid "Print debug info to stdout"
@@ -158,5 +158,5 @@ msgstr "Kunde inte hitta aktuell visningsyta"
 msgid "Setting viewport failed"
 msgstr "Kunde inte sätta visningsyta"
 
-#~ msgid "List of LUA files handling \"window open\" events in folder:"
-#~ msgstr "Lista på LUA-filer som hanterar \"window open\"-händelser i mappen:"
+#~ msgid "List of Lua files handling \"window open\" events in folder:"
+#~ msgstr "Lista på Lua-filer som hanterar \"window open\"-händelser i mappen:"

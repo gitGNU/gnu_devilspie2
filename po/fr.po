@@ -36,8 +36,8 @@ msgstr "Aucun script trouvé dans le dossier de scripts - sortie du programme."
 
 #: devilspie2.c:215 devilspie2.c:223
 #, c-format
-msgid "List of LUA files handling \"%s\" events in folder:"
-msgstr "Liste des fichiers LUA gérant les évènements \"%s\"dans le dossier:"
+msgid "List of Lua files handling \"%s\" events in folder:"
+msgstr "Liste des fichiers Lua gérant les évènements \"%s\"dans le dossier:"
 
 #: devilspie2.c:289
 msgid "Print debug info to stdout"

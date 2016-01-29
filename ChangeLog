@@ -78,7 +78,7 @@ ChangeLog:
 	* Add file monitor to automatically load added scripts
 
 0.27
-	* Update Makefile to fix a LUA problem with pkg-config
+	* Update Makefile to fix a Lua problem with pkg-config
 	* Update the email contact address in the README
 	* Add get_workspace_count function - Thanks Hans Nieser!
 	* Use luaL_newstate instead of lua_open which is deprecated

@@ -81,7 +81,7 @@ static void load_list_of_scripts(WnckScreen *screen, WnckWindow *window,
 		while(temp_file_list) {
 			gchar *filename = (gchar*)temp_file_list->data;
 
-			// is it a LUA file?
+			// is it a Lua file?
 			if (g_str_has_suffix((gchar*)filename, ".lua")) {
 
 				// init the script, run it
@@ -214,7 +214,7 @@ void print_script_lists()
 
 	// If we are running debug mode - print the list of files:
 	if (debug) {
-		printf(_("List of LUA files handling \"%s\" events in folder:"),
+		printf(_("List of Lua files handling \"%s\" events in folder:"),
 		       "window_open");
 		printf("\n");
 		if (file_window_open_list)
@@ -222,7 +222,7 @@ void print_script_lists()
 	}
 
 	if (debug) {
-		printf(_("List of LUA files handling \"%s\" events in folder:"),
+		printf(_("List of Lua files handling \"%s\" events in folder:"),
 		       "window_close");
 		printf("\n");
 		if (file_window_close_list)

@@ -37,7 +37,7 @@ with the following prototype:
 int c_center(lua_State *lua);
 
 What is returned is an integer represeting the amount of return values that the
-LUA function returns. These return values are pushed to the stack using a
+Lua function returns. These return values are pushed to the stack using a
 lua_push for the correct type - for example lua_pushboolean(lua, TRUE);
 
 And logically if there are nothing to return, we simply do a "return 0;".
@@ -45,7 +45,7 @@ And logically if there are nothing to return, we simply do a "return 0;".
 If we need something that isn't directly implemented in libwnck, we can add
 a function implementing it to the file "xutils.c" - please separate stuff from
 script_functions if it has no need to be there, and simply call it from your
-function in script_functions.c. The point is to keep input and LUA interpreting
+function in script_functions.c. The point is to keep input and Lua interpreting
 to script_functions, while the actual wnck and/or X work is in the xutils files.
 
 

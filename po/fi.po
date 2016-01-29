@@ -35,8 +35,8 @@ msgstr "Käsikirjoituksia ei löytynyt käsikirjoituskansiossa - lopetetaan."
 
 #: devilspie2.c:215 devilspie2.c:223
 #, c-format
-msgid "List of LUA files handling \"%s\" events in folder:"
-msgstr "\"%s\"-tapahtumien käsitteleviä LUA-tiedostoja kansiossa:"
+msgid "List of Lua files handling \"%s\" events in folder:"
+msgstr "\"%s\"-tapahtumien käsitteleviä Lua-tiedostoja kansiossa:"
 
 #: devilspie2.c:289
 msgid "Print debug info to stdout"

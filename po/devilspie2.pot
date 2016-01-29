@@ -36,7 +36,7 @@ msgstr ""
 
 #: devilspie2.c:215 devilspie2.c:223
 #, c-format
-msgid "List of LUA files handling \"%s\" events in folder:"
+msgid "List of Lua files handling \"%s\" events in folder:"
 msgstr ""
 
 #: devilspie2.c:289

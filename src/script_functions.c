@@ -981,7 +981,7 @@ int c_unstick_window(lua_State *lua)
 
 
 /**
- * return the geometry of the current window to the LUA script
+ * return the geometry of the current window to the Lua script
  */
 int c_get_window_geometry(lua_State *lua)
 {
@@ -1010,7 +1010,7 @@ int c_get_window_geometry(lua_State *lua)
 
 
 /**
- * return the client geometry of the current window to the LUA script
+ * return the client geometry of the current window to the Lua script
  * this is excluding the window manager frame
  */
 int c_get_client_window_geometry(lua_State *lua)
@@ -1823,7 +1823,7 @@ int c_set_window_type(lua_State *lua)
 
 
 /**
- * return the geometry of the screen  to the LUA script
+ * return the geometry of the screen  to the Lua script
  */
 int c_get_screen_geometry(lua_State *lua)
 {
