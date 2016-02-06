@@ -1,5 +1,5 @@
 #
-# Copyright © 2011-2015 Andreas Rönnquist.
+# Copyright © 2011-2016 Andreas Rönnquist.
 # This file is distributed under the same license
 # as the devilspie2 package, see COPYING file.
 #
@@ -51,3 +51,8 @@ rbtwrrr <rbtwrrr (at) inventati (dot) org>
 
 Toni Spets <toni.spets@iki.fi>
 - add get_window_is_pinned function
+
+Nicola Fontana <ntd@entidi.it>
+- Italian translation
+- Spelling fixes
+- Allow reading of XA_WINDOW properties
