@@ -1,161 +1,164 @@
 # Japanese translations for devilspie2 package
-# devilspie2 パッケージに対する英訳.
-# Copyright (C) 2013 THE devilspie2'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the devilspie2 package.
-# Hiroshi Hasebe <hhasebe@dvoi.com>, 2013.
+# Copyright (C) 2011 Andreas Rönnquist <gusnan@gusnan.se>
+# This file is distributed under the same license as the PACKAGE package.
+# Andreas Rönnquist <gusnan@gusnan.se>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: devilspie2 0.28pre\n"
+"Project-Id-Version: devilspie2 0.39\n"
 "Report-Msgid-Bugs-To: gusnan@gusnan.se\n"
-"POT-Creation-Date: 2014-04-02 21:21+0200\n"
-"PO-Revision-Date: 2013-08-28 12:34+0900\n"
+"POT-Creation-Date: 2016-03-09 10:23+0100\n"
+"PO-Revision-Date: 2016-03-11 00:01+0900\n"
 "Last-Translator: Hiroshi Hasebe <hhasebe@dvoi.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
 
-#: config.c:188
+#: config.c:184
 msgid "script_folder isn't a folder."
-msgstr "script_folderがフォルダに非ず"
+msgstr "script_folderがフォルダの検出に失敗"
 
-#: config.c:200 script.c:232
+#: config.c:196 script.c:238
 #, c-format
 msgid "Error: %s"
 msgstr "エラー: %s"
 
-#: devilspie2.c:164
+#: devilspie2.c:166
 msgid "Received signal:"
 msgstr "シグナルを検出:"
 
-#: devilspie2.c:208
+#: devilspie2.c:210
 msgid "No script files found in the script folder - exiting."
-msgstr "script_folderにスクリプトが存在せず - 終了."
+msgstr "スクリプトが空のため, 実行終了."
 
-#: devilspie2.c:215 devilspie2.c:223
+#: devilspie2.c:217 devilspie2.c:225
 #, c-format
 msgid "List of Lua files handling \"%s\" events in folder:"
 msgstr "イベント \"%s\" を担当するLuaファイルの一覧:"
 
-#: devilspie2.c:289
+#: devilspie2.c:293
 msgid "Print debug info to stdout"
 msgstr "標準出力にデバッグ情報を書き出す"
 
-#: devilspie2.c:291
+#: devilspie2.c:296
 msgid "Don't apply any rules, only emulate execution"
-msgstr "ルールを適用せず, エミュレーションを行う"
+msgstr "ルールを適用せず, エミュレーションのみ行う"
 
-#: devilspie2.c:293
+#: devilspie2.c:299
 msgid "Search for scripts in this folder"
 msgstr "スクリプト収容先フォルダ"
 
-#: devilspie2.c:293
+#: devilspie2.c:299
 msgid "FOLDER"
 msgstr "FOLDER"
 
-#: devilspie2.c:295
+#: devilspie2.c:302
 msgid "Show Devilspie2 version and quit"
 msgstr "Devilspie2のバージョン情報を表示して終了"
 
-#: devilspie2.c:300
+#: devilspie2.c:308
 msgid "Show libwnck version and quit"
 msgstr "libwnckのバージョンを表示して終了"
 
-#: devilspie2.c:318
+#: devilspie2.c:327
 msgid "apply rules on windows"
 msgstr "ウィンドウにルールを適用"
 
-#: devilspie2.c:325
+#: devilspie2.c:334
 #, c-format
 msgid "option parsing failed: %s"
 msgstr "引数の解釈に失敗: %s"
 
-#: devilspie2.c:346
+#: devilspie2.c:355
 msgid "Couldn't create the default folder for devilspie2 scripts."
-msgstr "デフォルトのスクリプト・フォルダの作成に失敗"
+msgstr "規定のスクリプト・フォルダの作成に失敗"
 
-#: devilspie2.c:373
+#: devilspie2.c:382
 msgid "An X11 display is required for devilspie2."
 msgstr "Devilspie2の実行にはX11環境を要する"
 
-#: devilspie2.c:381
+#: devilspie2.c:390
 msgid "Couldn't init script error messages!"
-msgstr "スクリプト・エラー・メッセージの初期化に失敗"
+msgstr "スクリプト・エラー・メッセージの初期化に失敗!"
 
-#: devilspie2.c:398
+#: devilspie2.c:411
 msgid "Running devilspie2 in debug and emulate mode."
-msgstr "devilspie2をデバック + エミュレーション・モードで実行中"
+msgstr "Devilspie2をデバック + エミュレーション・モードで実行中"
 
-#: devilspie2.c:400
+#: devilspie2.c:413
 msgid "Running devilspie2 in debug mode."
-msgstr "devilspie2をデバッグ・モードで実行中"
+msgstr "Devilspie2をデバッグ・モードで実行中"
 
-#: devilspie2.c:405
+#: devilspie2.c:418
 #, c-format
 msgid "Using scripts from folder: %s"
-msgstr "スクリプト・フォルダ \"%s\" を使用中"
+msgstr "フォルダ \"%s\" のスクリプトを使用中"
 
-#: devilspie2.c:421
+#: devilspie2.c:434
 msgid "Couldn't create directory monitor!"
-msgstr "ディレクトリ・モニタの作成に失敗!"
+msgstr "ディレクトリ認識機能の実行に失敗!"
 
-#: script_functions.c:732 script_functions.c:778
+#: script_functions.c:709 script_functions.c:755
 #, c-format
 msgid "Workspace number %d does not exist!"
-msgstr "%d番のワークスペースが存在せず"
+msgstr "%d番ワークスペースの検出に失敗!"
 
-#: script_functions.c:1673
+#: script_functions.c:1734
 msgid "Could not get workspace"
-msgstr "ワークスペースの取得に失敗"
+msgstr "ワークスペースの認識に失敗"
 
-#: xutils.c:183 xutils.c:201 error_strings.c:127
+#: xutils.c:186 xutils.c:204 error_strings.c:136
 msgid "Failed!"
 msgstr "処理に失敗!"
 
-#: error_strings.c:49
+#: error_strings.c:51
 msgid "Couldn't allocate error string!"
 msgstr "エラー文字列の割当に失敗!"
 
-#: error_strings.c:51
+#: error_strings.c:53
 msgid "No indata expected"
-msgstr "引数は不要"
+msgstr "不要な引数を検出"
 
-#: error_strings.c:58
+#: error_strings.c:60
 msgid "One indata expected"
-msgstr "引数1件を要する"
+msgstr "1個の引数を想定"
 
-#: error_strings.c:65
+#: error_strings.c:67
 msgid "Two indata expected"
-msgstr "引数が2つ必要"
+msgstr "2個の引数を想定"
 
-#: error_strings.c:72
+#: error_strings.c:74
 msgid "Four indata expected"
-msgstr "引数が4つ必要"
+msgstr "4個の引数を想定"
 
-#: error_strings.c:80
+#: error_strings.c:81
+msgid "One or two indata expected"
+msgstr "1個もしくは2個の引数を想定"
+
+#: error_strings.c:89
 msgid "Number expected as indata"
-msgstr "数値の引数が必要"
+msgstr "数値の引数が想定"
 
-#: error_strings.c:88
+#: error_strings.c:97
 msgid "Boolean expected as indata"
 msgstr "ブール型の引数が必要"
 
-#: error_strings.c:96
+#: error_strings.c:105
 msgid "String expected as indata"
 msgstr "文字列型の引数が必要"
 
-#: error_strings.c:104
+#: error_strings.c:113
 msgid "Integer greater than zero expected"
-msgstr "引数にはゼロより大きな整数が必要"
+msgstr "ゼロよりも大きな整数を想定"
 
-#: error_strings.c:112
+#: error_strings.c:121
 msgid "Could not find current viewport"
 msgstr "カレント・ビューポートの検出に失敗"
 
-#: error_strings.c:120
+#: error_strings.c:129
 msgid "Setting viewport failed"
 msgstr "ビューポートの設定に失敗"
