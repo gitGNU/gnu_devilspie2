@@ -2,6 +2,18 @@
 ChangeLog:
 ----------
 
+0.40
+	* Add callback for geometry change
+	* Add error string for one or two indata expected
+	* Make devilspie2_get_viewport_start return both x
+	  and y coordinates
+	* Add alternative functionality to set_viewport Now you can set the
+	  coordinates to the window if you use two integers as indata
+	* New Italian translation, updated Dutch, Japanese and Swedish
+	  translations
+	* Build flags hardening fixes
+	* Allow reading of XA_WINDOW properties
+
 0.39
 	* Fix proper flushing of debugging output
 	* Some source formatting fixes
