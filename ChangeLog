@@ -2,6 +2,9 @@
 ChangeLog:
 ----------
 
+0.41
+	* Set a correct version number
+
 0.40
 	* Add callback for geometry change
 	* Add error string for one or two indata expected
