@@ -2,6 +2,9 @@
 ChangeLog:
 ----------
 
+0.42
+	* Support window focus / blur events
+
 0.41
 	* Set a correct version number
 
