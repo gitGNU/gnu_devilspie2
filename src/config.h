@@ -26,8 +26,16 @@ int load_config(gchar *config_filename);
 
 void clear_file_lists();
 
-extern GSList *file_window_open_list;
-extern GSList *file_window_close_list;
+typedef enum {
+	W_OPEN,
+	W_CLOSE,
+	W_FOCUS,
+	W_BLUR,
+	W_NUM_EVENTS /* keep this at the end */
+} win_event_type;
+
+extern GSList *event_lists[W_NUM_EVENTS];
+extern const char *event_names[W_NUM_EVENTS];
 
 // Our git version which is defined through some magic in the build system
 extern const char *gitversion;

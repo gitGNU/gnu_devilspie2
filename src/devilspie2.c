@@ -76,7 +76,7 @@ static void load_list_of_scripts(WnckScreen *screen, WnckWindow *window,
 	set_current_window(window);
 
 	// for every file in the folder - load the script
-	if (file_window_open_list != NULL) {
+	if (event_lists[W_OPEN] != NULL) {
 
 		while(temp_file_list) {
 			gchar *filename = (gchar*)temp_file_list->data;
@@ -104,7 +104,7 @@ static void load_list_of_scripts(WnckScreen *screen, WnckWindow *window,
  */
 static void window_opened_cb(WnckScreen *screen, WnckWindow *window)
 {
-	load_list_of_scripts(screen, window, file_window_open_list);
+	load_list_of_scripts(screen, window, event_lists[W_OPEN]);
 }
 
 
@@ -113,7 +113,19 @@ static void window_opened_cb(WnckScreen *screen, WnckWindow *window)
  */
 static void window_closed_cb(WnckScreen *screen, WnckWindow *window)
 {
-	load_list_of_scripts(screen, window, file_window_close_list);
+	load_list_of_scripts(screen, window, event_lists[W_CLOSE]);
+}
+
+/**
+ *
+ */
+static void window_changed_cb(WnckScreen *screen, WnckWindow *window)
+{
+	WnckWindow *cur;
+
+	load_list_of_scripts(screen, window, event_lists[W_BLUR]);
+	cur = wnck_screen_get_active_window(screen);
+	load_list_of_scripts(screen, cur, event_lists[W_FOCUS]);
 }
 
 
@@ -138,6 +150,8 @@ void init_screens()
 		                 (GCallback)window_opened_cb, NULL);
 		g_signal_connect(screen, "window-closed",
 		                 (GCallback)window_closed_cb, NULL);
+		g_signal_connect(screen, "active-window-changed",
+		                 (GCallback)window_changed_cb, NULL);
 	}
 }
 
@@ -203,30 +217,30 @@ void print_list(GSList *list)
  */
 void print_script_lists()
 {
+	gboolean have_any_files = FALSE;
+	win_event_type i;
+
 	if (debug)
 		printf("------------\n");
 
-	if ((file_window_open_list == NULL) && (file_window_close_list == NULL)) {
+	for (i = 0; i < W_NUM_EVENTS; i++) {
+		if (event_lists[i])
+			have_any_files = TRUE;
+		// If we are running debug mode - print the list of files:
+		if (debug) {
+			printf(_("List of Lua files handling \"%s\" events in folder:"),
+				   event_names[i]);
+			printf("\n");
+			if (event_lists[i]) {
+				print_list(event_lists[i]);
+			}
+		}
+	}
+
+	if (!have_any_files) {
 		printf("%s", _("No script files found in the script folder - exiting."));
 		printf("\n\n");
 		exit(EXIT_SUCCESS);
-	}
-
-	// If we are running debug mode - print the list of files:
-	if (debug) {
-		printf(_("List of Lua files handling \"%s\" events in folder:"),
-		       "window_open");
-		printf("\n");
-		if (file_window_open_list)
-			print_list(file_window_open_list);
-	}
-
-	if (debug) {
-		printf(_("List of Lua files handling \"%s\" events in folder:"),
-		       "window_close");
-		printf("\n");
-		if (file_window_close_list)
-			print_list(file_window_close_list);
 	}
 }
 

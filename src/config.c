@@ -38,8 +38,13 @@
 /**
  *
  */
-GSList *file_window_open_list = NULL;
-GSList *file_window_close_list = NULL;
+GSList *event_lists[W_NUM_EVENTS] = { NULL, NULL, NULL, NULL };
+const char *event_names[W_NUM_EVENTS] = {
+	"window_open",
+	"window_close",
+	"window_focus",
+	"window_blur",
+};
 
 
 /**
@@ -152,11 +157,14 @@ gboolean is_in_list(GSList *list, gchar *filename)
  */
 gboolean is_in_any_list(gchar *filename)
 {
-	gboolean result = FALSE;
+	win_event_type i;
 
-	if (is_in_list(file_window_close_list, filename)) result = TRUE;
+	for (i=0; i < W_NUM_EVENTS; i++) {
+		if (is_in_list(event_lists[i], filename))
+			return TRUE;
+	}
 
-	return result;
+	return FALSE;
 }
 
 
@@ -201,9 +209,15 @@ int load_config(gchar *filename)
 
 		run_script(config_lua_state);
 
-		file_window_close_list = get_table_of_strings(config_lua_state,
+		event_lists[W_CLOSE] = get_table_of_strings(config_lua_state,
 		                         script_folder,
 		                         "scripts_window_close");
+		event_lists[W_FOCUS] = get_table_of_strings(config_lua_state,
+		                         script_folder,
+		                         "scripts_window_focus");
+		event_lists[W_BLUR]  = get_table_of_strings(config_lua_state,
+		                         script_folder,
+		                         "scripts_window_blur");
 	}
 
 	// add the files in the folder to our linked list
@@ -227,7 +241,7 @@ int load_config(gchar *filename)
 		g_free(temp_filename);
 	}
 
-	file_window_open_list = temp_window_open_file_list;
+	event_lists[W_OPEN] = temp_window_open_file_list;
 EXITPOINT:
 	if (config_lua_state)
 		done_script(config_lua_state);
@@ -240,7 +254,7 @@ EXITPOINT:
 /**
  *
  */
-void unalloacte_file_list(GSList *file_list)
+void unallocate_file_list(GSList *file_list)
 {
 	if (file_list) {
 
@@ -261,11 +275,11 @@ void unalloacte_file_list(GSList *file_list)
  */
 void clear_file_lists()
 {
-	if (file_window_open_list) {
-		unalloacte_file_list(file_window_open_list);
-	}
+	win_event_type i = 0;
 
-	if (file_window_close_list) {
-		unalloacte_file_list(file_window_close_list);
+	for (i = 0; i < W_NUM_EVENTS; i++) {
+		if (event_lists[i]) {
+			unallocate_file_list(event_lists[i]);
+		}
 	}
 }
