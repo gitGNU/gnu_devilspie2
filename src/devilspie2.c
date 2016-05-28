@@ -116,6 +116,7 @@ static void window_closed_cb(WnckScreen *screen, WnckWindow *window)
 	load_list_of_scripts(screen, window, event_lists[W_CLOSE]);
 }
 
+
 /**
  *
  */
