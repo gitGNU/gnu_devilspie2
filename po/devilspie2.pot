@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the devilspie2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: devilspie2 0.39\n"
+"Project-Id-Version: devilspie2 0.42pre\n"
 "Report-Msgid-Bugs-To: gusnan@gusnan.se\n"
-"POT-Creation-Date: 2016-03-09 10:23+0100\n"
+"POT-Creation-Date: 2016-07-06 12:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,87 +17,87 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: config.c:184
+#: config.c:192
 msgid "script_folder isn't a folder."
 msgstr ""
 
-#: config.c:196 script.c:238
+#: config.c:204 script.c:238
 #, c-format
 msgid "Error: %s"
 msgstr ""
 
-#: devilspie2.c:166
+#: devilspie2.c:181
 msgid "Received signal:"
 msgstr ""
 
-#: devilspie2.c:210
-msgid "No script files found in the script folder - exiting."
-msgstr ""
-
-#: devilspie2.c:217 devilspie2.c:225
+#: devilspie2.c:232
 #, c-format
 msgid "List of Lua files handling \"%s\" events in folder:"
 msgstr ""
 
-#: devilspie2.c:293
-msgid "Print debug info to stdout"
-msgstr ""
-
-#: devilspie2.c:296
-msgid "Don't apply any rules, only emulate execution"
-msgstr ""
-
-#: devilspie2.c:299
-msgid "Search for scripts in this folder"
-msgstr ""
-
-#: devilspie2.c:299
-msgid "FOLDER"
-msgstr ""
-
-#: devilspie2.c:302
-msgid "Show Devilspie2 version and quit"
+#: devilspie2.c:242
+msgid "No script files found in the script folder - exiting."
 msgstr ""
 
 #: devilspie2.c:308
+msgid "Print debug info to stdout"
+msgstr ""
+
+#: devilspie2.c:311
+msgid "Don't apply any rules, only emulate execution"
+msgstr ""
+
+#: devilspie2.c:314
+msgid "Search for scripts in this folder"
+msgstr ""
+
+#: devilspie2.c:314
+msgid "FOLDER"
+msgstr ""
+
+#: devilspie2.c:317
+msgid "Show Devilspie2 version and quit"
+msgstr ""
+
+#: devilspie2.c:323
 msgid "Show libwnck version and quit"
 msgstr ""
 
-#: devilspie2.c:327
+#: devilspie2.c:342
 msgid "apply rules on windows"
 msgstr ""
 
-#: devilspie2.c:334
+#: devilspie2.c:349
 #, c-format
 msgid "option parsing failed: %s"
 msgstr ""
 
-#: devilspie2.c:355
+#: devilspie2.c:370
 msgid "Couldn't create the default folder for devilspie2 scripts."
 msgstr ""
 
-#: devilspie2.c:382
+#: devilspie2.c:397
 msgid "An X11 display is required for devilspie2."
 msgstr ""
 
-#: devilspie2.c:390
+#: devilspie2.c:405
 msgid "Couldn't init script error messages!"
 msgstr ""
 
-#: devilspie2.c:411
+#: devilspie2.c:426
 msgid "Running devilspie2 in debug and emulate mode."
 msgstr ""
 
-#: devilspie2.c:413
+#: devilspie2.c:428
 msgid "Running devilspie2 in debug mode."
 msgstr ""
 
-#: devilspie2.c:418
+#: devilspie2.c:433
 #, c-format
 msgid "Using scripts from folder: %s"
 msgstr ""
 
-#: devilspie2.c:434
+#: devilspie2.c:449
 msgid "Couldn't create directory monitor!"
 msgstr ""
 

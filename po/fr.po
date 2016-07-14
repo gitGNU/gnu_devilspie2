@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devilspie2 0.18\n"
 "Report-Msgid-Bugs-To: gusnan@gusnan.se\n"
-"POT-Creation-Date: 2014-04-02 21:21+0200\n"
+"POT-Creation-Date: 2016-07-06 12:26+0200\n"
 "PO-Revision-Date: 2012-04-15 15:44+0200\n"
 "Last-Translator: Robin Hahling <robin.hahling@gw-computing.net>\n"
 "Language-Team: French\n"
@@ -17,143 +17,147 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: config.c:188
+#: config.c:192
 msgid "script_folder isn't a folder."
 msgstr "script_folder n'est pas un dossier."
 
-#: config.c:200 script.c:232
+#: config.c:204 script.c:238
 #, c-format
 msgid "Error: %s"
 msgstr "Erreur: %s"
 
-#: devilspie2.c:164
+#: devilspie2.c:181
 msgid "Received signal:"
 msgstr "Signal reçu:"
 
-#: devilspie2.c:208
-msgid "No script files found in the script folder - exiting."
-msgstr "Aucun script trouvé dans le dossier de scripts - sortie du programme."
-
-#: devilspie2.c:215 devilspie2.c:223
+#: devilspie2.c:232
 #, c-format
 msgid "List of Lua files handling \"%s\" events in folder:"
 msgstr "Liste des fichiers Lua gérant les évènements \"%s\"dans le dossier:"
 
-#: devilspie2.c:289
+#: devilspie2.c:242
+msgid "No script files found in the script folder - exiting."
+msgstr "Aucun script trouvé dans le dossier de scripts - sortie du programme."
+
+#: devilspie2.c:308
 msgid "Print debug info to stdout"
 msgstr "Affiche les informations de debug dans la sortie standard (stdout)"
 
-#: devilspie2.c:291
+#: devilspie2.c:311
 msgid "Don't apply any rules, only emulate execution"
 msgstr "N'applique aucune règle, simule seulement l'exécution"
 
-#: devilspie2.c:293
+#: devilspie2.c:314
 msgid "Search for scripts in this folder"
 msgstr "Recherche de scripts dans ce dossier"
 
-#: devilspie2.c:293
+#: devilspie2.c:314
 msgid "FOLDER"
 msgstr "DOSSIER"
 
-#: devilspie2.c:295
+#: devilspie2.c:317
 msgid "Show Devilspie2 version and quit"
 msgstr "Affiche la version de Devilspie2 et quitte le programme"
 
-#: devilspie2.c:300
+#: devilspie2.c:323
 msgid "Show libwnck version and quit"
 msgstr "Affiche la version de libwnck et quitte le programme"
 
-#: devilspie2.c:318
+#: devilspie2.c:342
 msgid "apply rules on windows"
 msgstr "applique les règles sur les fenêtres"
 
-#: devilspie2.c:325
+#: devilspie2.c:349
 #, c-format
 msgid "option parsing failed: %s"
 msgstr "l'analyse des options a échoué: %s"
 
-#: devilspie2.c:346
+#: devilspie2.c:370
 msgid "Couldn't create the default folder for devilspie2 scripts."
-msgstr "Impossible de créer le fichier par défaut pour les scripts devilspie2"
+msgstr "Impossible de créer le fichier par défaut pour les scripts devilspie2."
 
-#: devilspie2.c:373
+#: devilspie2.c:397
 msgid "An X11 display is required for devilspie2."
 msgstr "Un affichage X11 est requis pour devilspie2."
 
-#: devilspie2.c:381
+#: devilspie2.c:405
 msgid "Couldn't init script error messages!"
 msgstr "Impossible d'initialiser le script de messages d'erreurs"
 
-#: devilspie2.c:398
+#: devilspie2.c:426
 msgid "Running devilspie2 in debug and emulate mode."
-msgstr "Fonctionnement de devilspie2 en mode debug et simulation."
+msgstr "Exécution de devilspie2 en mode debug et simulation."
 
-#: devilspie2.c:400
+#: devilspie2.c:428
 msgid "Running devilspie2 in debug mode."
-msgstr "Fonctionnement de devilspie2 en mode debug."
+msgstr "Exécution de devilspie2 en mode debug."
 
-#: devilspie2.c:405
+#: devilspie2.c:433
 #, c-format
 msgid "Using scripts from folder: %s"
-msgstr "Utilise les scripts de ce dossier: %s"
+msgstr "Utilise les scripts du dossier: %s"
 
-#: devilspie2.c:421
+#: devilspie2.c:449
 msgid "Couldn't create directory monitor!"
 msgstr "Impossible de créer le dossier moniteur!"
 
-#: script_functions.c:732 script_functions.c:778
+#: script_functions.c:709 script_functions.c:755
 #, c-format
 msgid "Workspace number %d does not exist!"
 msgstr "L'espace de travail numéro %d n'existe pas!"
 
-#: script_functions.c:1673
+#: script_functions.c:1734
 msgid "Could not get workspace"
 msgstr "Impossible d'obtenir l'espace de travail"
 
-#: xutils.c:183 xutils.c:201 error_strings.c:127
+#: xutils.c:186 xutils.c:204 error_strings.c:136
 msgid "Failed!"
 msgstr "Échec!"
 
-#: error_strings.c:49
+#: error_strings.c:51
 msgid "Couldn't allocate error string!"
 msgstr "Impossible d'allouer la chaine de caractères de l'erreur"
 
-#: error_strings.c:51
+#: error_strings.c:53
 msgid "No indata expected"
 msgstr "Aucune donnée d'entrée attendue"
 
-#: error_strings.c:58
+#: error_strings.c:60
 msgid "One indata expected"
 msgstr "Une donnée d'entrée attendue"
 
-#: error_strings.c:65
+#: error_strings.c:67
 msgid "Two indata expected"
 msgstr "Deux données d'entrée attendues"
 
-#: error_strings.c:72
+#: error_strings.c:74
 msgid "Four indata expected"
 msgstr "Quatre données d'entrée attendues"
 
-#: error_strings.c:80
+#: error_strings.c:81
+msgid "One or two indata expected"
+msgstr "Une ou deux données d'entrée attendues"
+
+#: error_strings.c:89
 msgid "Number expected as indata"
 msgstr "Nombre attendu de données d'entrée"
 
-#: error_strings.c:88
+#: error_strings.c:97
 msgid "Boolean expected as indata"
 msgstr "Booléen attendu comme donnée d'entrée"
 
-#: error_strings.c:96
+#: error_strings.c:105
 msgid "String expected as indata"
 msgstr "Chaine de caractères attendue comme donnée d'entrée"
 
-#: error_strings.c:104
+#: error_strings.c:113
 msgid "Integer greater than zero expected"
 msgstr "Un entier plus grand que zéro est attendu"
 
-#: error_strings.c:112
+#: error_strings.c:121
 msgid "Could not find current viewport"
 msgstr "Impossible de trouver la fenêtre courante"
 
-#: error_strings.c:120
+#: error_strings.c:129
 msgid "Setting viewport failed"
 msgstr "Le paramétrage de la fenêtre a échoué"
