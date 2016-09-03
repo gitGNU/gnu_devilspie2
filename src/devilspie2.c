@@ -344,7 +344,7 @@ int main(int argc, char *argv[])
 	gchar *full_desc_string = g_strdup_printf("- %s", devilspie2_description);
 
 	context = g_option_context_new(full_desc_string);
-	g_option_context_add_main_entries(context,options, NULL);
+	g_option_context_add_main_entries(context, options, NULL);
 	if (!g_option_context_parse(context, &argc, &argv, &error)) {
 		g_print(_("option parsing failed: %s"), error->message);
 		printf("\n");
