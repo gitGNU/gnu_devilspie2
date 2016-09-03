@@ -336,8 +336,6 @@ int main(int argc, char *argv[])
 	bind_textdomain_codeset(PACKAGE, "");
 	textdomain(PACKAGE);
 
-	gdk_init(&argc, &argv);
-
 	gchar *devilspie2_description =
 	    g_strdup_printf(_("apply rules on windows"));
 
@@ -350,6 +348,8 @@ int main(int argc, char *argv[])
 		printf("\n");
 		exit(EXIT_FAILURE);
 	}
+
+	gdk_init(&argc, &argv);
 
 	g_free(full_desc_string);
 	g_free(devilspie2_description);
