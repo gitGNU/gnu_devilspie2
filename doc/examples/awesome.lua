@@ -16,7 +16,7 @@ function is_tiling()
 	return false;
 end
 
--- Make window floating 
+-- Make window floating
 -- Parameters: state - true to make window floating, else make window tiled
 function set_tile_floating( state )
 	if not awesome then
