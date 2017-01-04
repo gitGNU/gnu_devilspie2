@@ -1,13 +1,13 @@
 # Dutch translation of Devilspie2
-# Copyright (C) 2011 Andreas Rönnquist <gusnan@gusnan.se>
+# Copyright (C) 2011 Andreas Rönnquist <gusnan@openmailbox.org>
 # This file is distributed under the same license as the devilspie2 package.
-# Andreas Rönnquist <gusnan@gusnan.se>, 2011.
+# Andreas Rönnquist <gusnan@openmailbox.org>, 2011.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: devilspie2 0.16\n"
-"Report-Msgid-Bugs-To: gusnan@gusnan.se\n"
+"Report-Msgid-Bugs-To: gusnan@openmailbox.org\n"
 "POT-Creation-Date: 2016-03-09 15:21+0100\n"
 "PO-Revision-Date: 2016-03-09 15:25+0100\n"
 "Last-Translator: Frans de Jonge <fransdejonge@gmail.com>\n"

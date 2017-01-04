@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: devilspie2 0.33pre\n"
-"Report-Msgid-Bugs-To: gusnan@gusnan.se\n"
+"Report-Msgid-Bugs-To: gusnan@openmailbox.org\n"
 "POT-Creation-Date: 2014-04-02 21:21+0200\n"
 "PO-Revision-Date: 2016-01-29 08:31+0100\n"
 "Last-Translator: Nicola Fontana <ntd@entidi.it>\n"
