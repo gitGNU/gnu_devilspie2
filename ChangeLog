@@ -5,6 +5,7 @@ ChangeLog:
 0.42
 	* Support window focus / blur events
 	* Add example for Awesome window manager
+	* Updated French, Italian and Swedish translations
 
 0.41
 	* Set a correct version number
