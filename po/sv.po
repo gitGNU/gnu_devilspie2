@@ -1,12 +1,12 @@
 # Swedish translation of Devilspie2
-# Copyright (C) 2011 Andreas Rönnquist <gusnan@openmailbox.org>
+# Copyright (C) 2011-2016 Andreas Rönnquist <gusnan@openmailbox.org>
 # This file is distributed under the same license as the devilspie2 package.
-# Andreas Rönnquist <gusnan@openmailbox.org>, 2011.
+# Andreas Rönnquist <gusnan@openmailbox.org>, 2011-2016.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: devilspie2 0.26\n"
+"Project-Id-Version: devilspie2 0.42\n"
 "Report-Msgid-Bugs-To: gusnan@openmailbox.org\n"
 "POT-Creation-Date: 2017-01-04 15:35+0100\n"
 "PO-Revision-Date: 2016-03-11 10:09+0100\n"
